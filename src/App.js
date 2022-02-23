@@ -15,14 +15,14 @@ class App extends React.Component {
       rarity: 'normal',
       trunfo: false,
     };
-
-    handleChange = ({ target }) => {
-      const { name, value, checked, type } = target;
-      this.setState({
-        [name]: type === 'checkbox' ? checked : value,
-      });
-    };
   }
+
+  handleChange = ({ target }) => {
+    const { name, value, checked, type } = target;
+    this.setState({
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
 
   render() {
     const {
