@@ -39,27 +39,33 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tryunfo</h1>
-        <Form
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rarity }
-          cardTrunfo={ trunfo }
-          onInputChange={ this.handleChange }
-        />
-        <Card
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rarity }
-          cardTrunfo={ trunfo }
-        />
+        <main>
+          <Form
+            cardName={ name }
+            cardDescription={ description }
+            cardAttr1={ attr1 }
+            cardAttr2={ attr2 }
+            cardAttr3={ attr3 }
+            cardImage={ image }
+            cardRare={ rarity }
+            cardTrunfo={ trunfo }
+            onInputChange={ this.handleChange }
+          />
+
+          <aside>
+            <h2>Preview</h2>
+            <Card
+              cardName={ name }
+              cardDescription={ description }
+              cardAttr1={ attr1 }
+              cardAttr2={ attr2 }
+              cardAttr3={ attr3 }
+              cardImage={ image }
+              cardRare={ rarity }
+              cardTrunfo={ trunfo }
+            />
+          </aside>
+        </main>
       </div>
     );
   }
