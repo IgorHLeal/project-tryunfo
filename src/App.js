@@ -8,10 +8,10 @@ class App extends React.Component {
     this.state = {
       name: '',
       description: '',
-      attr1: 0,
-      attr2: 0,
-      attr3: 0,
-      image: 'https://static.mundomax.com.br/produtos/33267/550/1.webp',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '0',
       rarity: 'normal',
       trunfo: false,
       isSaveButtonDisabled: true,
@@ -25,17 +25,23 @@ class App extends React.Component {
     }, this.validationForm);
   };
 
+  // Concluído com ajuda do Pedro Fideles - Turma 19A
   validationForm = () => {
     const { name, description, image, rarity, attr1, attr2, attr3 } = this.state;
     const minValue = 90;
     const maxValue = 210;
 
+    // Falatava a conversão de string para number;
+    const atributo1 = parseInt(attr1, 10);
+    const atributo2 = parseInt(attr2, 10);
+    const atributo3 = parseInt(attr3, 10);
+
     if (
       name && description && image && rarity
-      && (attr1 + attr2 + attr3) <= maxValue
-      && attr1 >= 0 && attr1 <= minValue
-      && attr2 >= 0 && attr2 <= minValue
-      && attr3 >= 0 && attr3 <= minValue
+      && (atributo1 + atributo2 + atributo3) <= maxValue
+      && atributo1 >= 0 && atributo1 <= minValue
+      && atributo2 >= 0 && atributo2 <= minValue
+      && atributo3 >= 0 && atributo3 <= minValue
     ) this.setState({ isSaveButtonDisabled: false });
     else this.setState({ isSaveButtonDisabled: true });
   }
