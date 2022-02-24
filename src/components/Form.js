@@ -122,7 +122,6 @@ class Form extends Component {
             type="submit"
             data-testid="save-button"
             id="save-button"
-            name="attr1"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
