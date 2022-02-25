@@ -14,6 +14,7 @@ class App extends React.Component {
       image: '',
       rarity: 'normal',
       trunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       saveCards: [],
     };
@@ -75,6 +76,10 @@ class App extends React.Component {
     }));
   }
 
+  /* validatioSuperTrunfo = () => {
+    // Usar o some
+  }
+ */
   render() {
     /* const { saveCards } = this.state; */
     const {
@@ -86,6 +91,7 @@ class App extends React.Component {
       image,
       rarity,
       trunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       saveCards,
     } = this.state;
@@ -107,6 +113,7 @@ class App extends React.Component {
             onInputChange={ this.handleChange }
             isSaveButtonDisabled={ isSaveButtonDisabled }
             onSaveButtonClick={ this.saveButton }
+            hasTrunfo={ hasTrunfo }
           />
 
           <aside>
