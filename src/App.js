@@ -15,6 +15,7 @@ class App extends React.Component {
       rarity: 'normal',
       trunfo: false,
       isSaveButtonDisabled: true,
+      saveCards: [],
     };
   }
 
@@ -47,33 +48,33 @@ class App extends React.Component {
   }
 
   saveButton = () => {
-    this.setState((previousState) => ({
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
+    this.setState((prevState) => ({
+      name: '',
+      description: '',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '',
+      rarity: 'normal',
+      trunfo: false,
       saveCards: [
-        ...previousState.saveCards,
+        ...prevState.saveCards,
         {
-          cardName: previousState.cardName,
-          cardDescription: previousState.cardDescription,
-          cardAttr1: previousState.cardAttr1,
-          cardAttr2: previousState.cardAttr2,
-          cardAttr3: previousState.cardAttr3,
-          cardImage: previousState.cardImage,
-          cardRare: previousState.cardRare,
-          cardTrunfo: previousState.cardTrunfo,
+          cardName: prevState.name,
+          cardDescription: prevState.description,
+          cardAttr1: prevState.attr1,
+          cardAttr2: prevState.attr2,
+          cardAttr3: prevState.attr3,
+          cardImage: prevState.image,
+          cardRare: prevState.rarity,
+          cardTrunfo: prevState.trunfo,
         },
       ],
     }));
   }
 
   render() {
-    const { saveCards } = this.state;
+    /* const { saveCards } = this.state; */
     const {
       name,
       description,
@@ -84,6 +85,7 @@ class App extends React.Component {
       rarity,
       trunfo,
       isSaveButtonDisabled,
+      saveCards,
     } = this.state;
 
     return (
@@ -91,7 +93,7 @@ class App extends React.Component {
         <h1>Tryunfo</h1>
         <main>
           <Form
-            { ...this.state }
+            /* { ...this.state } */
             cardName={ name }
             cardDescription={ description }
             cardAttr1={ attr1 }
@@ -108,7 +110,7 @@ class App extends React.Component {
           <aside>
             <h2>Preview</h2>
             <Card
-              { ...this.state }
+              /* { ...this.state } */
               saveCards={ saveCards }
               cardName={ name }
               cardDescription={ description }
