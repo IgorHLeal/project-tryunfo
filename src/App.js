@@ -11,7 +11,7 @@ class App extends React.Component {
       attr1: '0',
       attr2: '0',
       attr3: '0',
-      image: '0',
+      image: '',
       rarity: 'normal',
       trunfo: false,
       isSaveButtonDisabled: true,
@@ -47,6 +47,8 @@ class App extends React.Component {
     else this.setState({ isSaveButtonDisabled: true });
   }
 
+  // Concluído com ajuda do Pedro Fideles - Turma 19A
+  // As chaves estavam com o nome errado, por isso os teste falharam
   saveButton = () => {
     this.setState((prevState) => ({
       name: '',
