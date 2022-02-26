@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+/* import SuperTrunfo from './SuperTrufo'; */
 
 class Form extends Component {
   render() {
@@ -107,11 +108,15 @@ class Form extends Component {
             </select>
           </label>
 
-          
+          {/* <SuperTrunfo
+            checked={ cardTrunfo }
+            onChange={ onInputChange }
+            hasTrunfo={ hasTrunfo }
+          /> */}
 
-          {/* {
+          {
             hasTrunfo
-              ? <p>Você já tem um Super Trunfo em seu baralho</p>
+              ? 'Você já tem um Super Trunfo em seu baralho'
               : (
                 <label htmlFor="trunfo-input">
                   Super Trunfo
@@ -125,7 +130,7 @@ class Form extends Component {
                   />
                 </label>
               )
-          } */}
+          }
 
           <button
             type="button"

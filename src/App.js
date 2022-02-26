@@ -76,10 +76,12 @@ class App extends React.Component {
     }));
   }
 
-  /* validatioSuperTrunfo = () => {
-    // Usar o some
+  validatioSuperTrunfo = () => {
+    const { saveCards } = this.state;
+    const validation = saveCards.some((card) => card.trunfo);
+    this.setState({ hasTrunfo: validation });
   }
- */
+
   render() {
     /* const { saveCards } = this.state; */
     const {
