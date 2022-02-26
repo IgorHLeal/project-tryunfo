@@ -33,7 +33,7 @@ class App extends React.Component {
     const minValue = 90;
     const maxValue = 210;
 
-    // Falatava a conversão de string para number;
+    // Faltava a conversão de string para number;
     const atributo1 = parseInt(attr1, 10);
     const atributo2 = parseInt(attr2, 10);
     const atributo3 = parseInt(attr3, 10);
@@ -63,20 +63,21 @@ class App extends React.Component {
       saveCards: [
         ...prevState.saveCards,
         {
-          cardName: prevState.name,
-          cardDescription: prevState.description,
-          cardAttr1: prevState.attr1,
-          cardAttr2: prevState.attr2,
-          cardAttr3: prevState.attr3,
-          cardImage: prevState.image,
-          cardRare: prevState.rarity,
-          cardTrunfo: prevState.trunfo,
+          name: prevState.name,
+          description: prevState.description,
+          attr1: prevState.attr1,
+          attr2: prevState.attr2,
+          attr3: prevState.attr3,
+          image: prevState.image,
+          rarity: prevState.rarity,
+          trunfo: prevState.trunfo,
         },
       ],
-    }));
+    }), () => this.validateSuperTrunfo());
   }
 
-  validatioSuperTrunfo = () => {
+  // Requisito 7 - Concluído com ajuda do Danillo - Turma 19A
+  validateSuperTrunfo = () => {
     const { saveCards } = this.state;
     const validation = saveCards.some((card) => card.trunfo);
     this.setState({ hasTrunfo: validation });

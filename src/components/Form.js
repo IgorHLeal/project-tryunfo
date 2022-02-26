@@ -116,7 +116,7 @@ class Form extends Component {
 
           {
             hasTrunfo
-              ? 'Você já tem um Super Trunfo em seu baralho'
+              ? <p>Você já tem um Super Trunfo em seu baralho</p>
               : (
                 <label htmlFor="trunfo-input">
                   Super Trunfo
