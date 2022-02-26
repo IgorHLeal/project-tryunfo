@@ -34,9 +34,21 @@ class App extends React.Component {
     const maxValue = 210;
 
     // Faltava a conversão de string para number;
-    const atributo1 = parseInt(attr1, 10);
+    // O sinal de + é um 'apelido' para 0 Number
+    const atributo1 = +attr1;
+    const atributo2 = +attr2;
+    const atributo3 = +attr3;
+
+    // Outras formas de fazer:
+    // Number
+    /* const atributo1 = Number(attr1);
+    const atributo2 = Number(attr2);
+    const atributo3 = Number(attr3); */
+
+    // parseInt
+    /* const atributo1 = parseInt(attr1, 10);
     const atributo2 = parseInt(attr2, 10);
-    const atributo3 = parseInt(attr3, 10);
+    const atributo3 = parseInt(attr3, 10); */
 
     if (
       name && description && image && rarity
