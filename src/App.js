@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import CardList from './components/CardList';
 
 class App extends React.Component {
   constructor() {
@@ -27,14 +28,14 @@ class App extends React.Component {
     }, this.validationForm);
   };
 
-  // Concluído com ajuda do Pedro Fideles - Turma 19A
+  // Requisito 5 - Concluído com ajuda do Pedro Fideles - Turma 19A
   validationForm = () => {
     const { name, description, image, rarity, attr1, attr2, attr3 } = this.state;
     const minValue = 90;
     const maxValue = 210;
 
     // Faltava a conversão de string para number;
-    // O sinal de + é um 'apelido' para 0 Number
+    // O sinal de '+' é um 'apelido' para 'Number';
     const atributo1 = +attr1;
     const atributo2 = +attr2;
     const atributo3 = +attr3;
@@ -60,8 +61,8 @@ class App extends React.Component {
     else this.setState({ isSaveButtonDisabled: true });
   }
 
-  // Concluído com ajuda do Pedro Fideles - Turma 19A
-  // As chaves estavam com o nome errado, por isso os teste falharam
+  // Requisito 6 - Concluído com ajuda do Pedro Fideles - Turma 19A
+  // As chaves estavam com o nome errado, por isso os testes falharam
   saveButton = () => {
     this.setState((prevState) => ({
       name: '',
@@ -135,6 +136,31 @@ class App extends React.Component {
               cardTrunfo={ trunfo }
             />
           </aside>
+
+          {/* Requisito 8 - Concluído com ajuda do Danillo - Turma 19A */}
+          {saveCards.map((card) => (<CardList
+            key={ card.name }
+            cardName={ card.name }
+            cardDescription={ card.description }
+            cardAttr1={ card.attr1 }
+            cardAttr2={ card.attr2 }
+            cardAttr3={ card.attr3 }
+            cardImage={ card.image }
+            cardRare={ card.rarity }
+            cardTrunfo={ card.trunfo }
+          />
+          ))}
+          {/* <CardList
+            saveCards={ saveCards }
+            cardName={ name }
+            cardDescription={ description }
+            cardAttr1={ attr1 }
+            cardAttr2={ attr2 }
+            cardAttr3={ attr3 }
+            cardImage={ image }
+            cardRare={ rarity }
+            cardTrunfo={ trunfo }
+          /> */}
         </main>
       </div>
     );
